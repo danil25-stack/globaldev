@@ -10,4 +10,6 @@ urlpatterns = [
     path("api/v1/schema/", views.SpectacularAPIView.as_view(), name="schema"),
     path("api/v1/docs/", views.SpectacularSwaggerView.as_view(url_name="schema"), name="swagger-ui"),
     path("api/v1/redoc/", views.SpectacularRedocView.as_view(url_name="schema"), name="redoc"),
+    path("api/v1/users/", include("users.urls")),
+    path("api/v1/exchange/", include("exchange.urls")),
 ]

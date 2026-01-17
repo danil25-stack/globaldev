@@ -152,3 +152,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
 STATIC_URL = 'static/'
+
+
+EXCHANGE_RATE_API_KEY = os.getenv("EXCHANGE_RATE_API_KEY")
+EXCHANGE_RATE_URL = os.getenv(
+    "EXCHANGE_RATE_URL",
+    "https://v6.exchangerate-api.com/v6/{api_key}/latest/{currency_code}"
+)
+COST_PER_REQUEST = int(os.getenv("COST_PER_REQUEST", 1))
